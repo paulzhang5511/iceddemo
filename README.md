@@ -1,0 +1,7 @@
+# iceddemo
+
+## run
+
+```
+cargo run
+```
