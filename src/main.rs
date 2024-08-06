@@ -25,8 +25,6 @@ impl Hello {
 }
 
 fn main() -> iced::Result {
-    // 在本机平台上，此方法将控制当前线程 并且不会回来。
-    // 它可能应该是您在函数中调用的最后一件事。
     iced::application("a cool counter", Hello::update, Hello::view)
         .theme(Hello::theme)
         .default_font(Font::with_name("MiSans"))
