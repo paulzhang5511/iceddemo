@@ -2,7 +2,7 @@ use std::borrow::Cow;
 
 use iced::{
     font::{load, Family, Stretch, Style, Weight},
-    widget::Column,
+    widget::{column, text, Column},
     Element, Font, Settings,
 };
 
@@ -16,7 +16,9 @@ impl Hello {
     fn update(&mut self, message: Messsage) {}
 
     fn view(&self) -> Element<'_, Messsage> {
-        "测试".into()
+        column![text!("测试").shaping(text::Shaping::Advanced),]
+            .padding(30.0)
+            .into()
     }
 
     fn theme(&self) -> iced::Theme {
@@ -27,7 +29,7 @@ impl Hello {
 fn main() -> iced::Result {
     iced::application("a cool counter", Hello::update, Hello::view)
         .theme(Hello::theme)
-        .default_font(Font::with_name("MiSans"))
+        .default_font(Font::MONOSPACE)
         .font(include_bytes!("../assets/fonts/MiSans-Regular.ttf"))
         .run()
 }
